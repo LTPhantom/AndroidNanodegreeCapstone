@@ -1,0 +1,43 @@
+buildscript {
+    ext {
+        version_android_gradle_plugin = '4.2.2'
+        version_core = '1.9.0'
+        version_constraint_layout = "2.2.0-alpha08"
+        version_glide = "4.8.0"
+        version_kotlin = '1.7.20'
+        version_kotlin_serialization = "0.14.0"
+        version_kotlin_coroutines = "1.6.4"
+        version_lifecycle_extensions = '2.2.0'
+        version_material = "1.9.0-alpha02"
+        version_moshi = "1.9.2"
+        version_navigation = "2.5.3"
+        version_retrofit = "2.7.2"
+        version_retrofit_coroutines_adapter = "0.9.2"
+        version_recyclerview = "1.2.0-alpha05"
+        version_glide = "4.11.0"
+        version_play_services_location = "21.0.1"
+        version_room = "2.5.0"
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.3.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$version_kotlin"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$version_kotlin"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$version_navigation"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="representative"
+            type="com.example.android.politicalpreparedness.representative.model.Representative" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/representative_photo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/photo_of_the_representative"
+            app:profileImage="@{representative.official.photoUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/representative_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{representative.office.name}"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/representative_photo"/>
+
+        <TextView
+            android:id="@+id/representative_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{representative.official.name}"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@id/representative_title"
+            app:layout_constraintStart_toStartOf="@id/representative_title"/>
+
+        <TextView
+            android:id="@+id/representative_party"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{representative.official.party}"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@id/representative_name"
+            app:layout_constraintStart_toStartOf="@id/representative_name"/>
+
+        <ImageView
+            android:id="@+id/www_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_www"
+            android:contentDescription="@string/personal_website_link"
+            app:layout_constraintEnd_toStartOf="@id/facebook_icon"
+            app:layout_constraintBottom_toBottomOf="@id/facebook_icon"/>
+
+        <ImageView
+            android:id="@+id/facebook_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_facebook"
+            android:contentDescription="@string/facebook_link"
+            app:layout_constraintEnd_toStartOf="@id/twitter_icon"
+            app:layout_constraintBottom_toBottomOf="@id/twitter_icon"/>
+
+        <ImageView
+            android:id="@+id/twitter_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_twitter"
+            android:contentDescription="@string/twitter_link"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
