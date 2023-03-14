@@ -31,6 +31,7 @@ class ElectionViewHolder(private val binding: ViewholderElectionBinding) :
     fun bind(election: Election) {
         binding.electionTitle.text = election.name
         binding.electionDay.text = election.electionDay.toString()
+        binding.executePendingBindings()
     }
 
     companion object {

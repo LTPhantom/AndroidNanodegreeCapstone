@@ -1,17 +1,15 @@
 package com.example.android.politicalpreparedness.representative
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.android.politicalpreparedness.network.CivicsApi
 import com.example.android.politicalpreparedness.network.models.Address
 import com.example.android.politicalpreparedness.representative.model.Representative
 import kotlinx.coroutines.launch
 
-class RepresentativeViewModel : ViewModel() {
+class RepresentativeViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel() {
 
-    private var _representatives: MutableLiveData<List<Representative>> = MutableLiveData()
+    private var _representatives: MutableLiveData<List<Representative>> =
+        savedStateHandle.getLiveData("rep", listOf())
     val representatives: LiveData<List<Representative>>
         get() = _representatives
 

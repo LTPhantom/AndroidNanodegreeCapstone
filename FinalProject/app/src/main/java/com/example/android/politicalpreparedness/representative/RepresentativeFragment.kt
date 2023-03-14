@@ -20,6 +20,7 @@ import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.example.android.politicalpreparedness.R
 import com.example.android.politicalpreparedness.databinding.FragmentRepresentativeBinding
 import com.example.android.politicalpreparedness.network.models.Address
@@ -50,6 +51,7 @@ class DetailFragment : Fragment() {
     ): View {
 
         binding = FragmentRepresentativeBinding.inflate(inflater)
+        binding.executePendingBindings()
         binding.lifecycleOwner = this
         representativeViewModel = ViewModelProvider(this)[RepresentativeViewModel::class.java]
         binding.viewModel = representativeViewModel

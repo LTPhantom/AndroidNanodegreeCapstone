@@ -17,7 +17,7 @@ private const val BASE_URL = "https://www.googleapis.com/civicinfo/v2/"
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .add(DateAdapter())
-    //.add(ElectionAdapter())
+    .add(ElectionAdapter())
     .build()
 
 private val retrofit = Retrofit.Builder()
